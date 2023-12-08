@@ -32,12 +32,12 @@ const Button: React.FC<ButtonProps> = ({
     hover:opacity-80
     transition
     w-full
-    border-purple-700
+    border-violet-700
     flex
     items-center
     justify-center
     gap-2
-    ${outline ? "bg-white text-purple-700" : "bg-purple-700 text-white"}
+    ${outline ? "bg-white text-violet-700" : "bg-violet-700 text-white"}
     ${
       small
         ? "text-sm font-light py-1 px-2 border-[1px]"
