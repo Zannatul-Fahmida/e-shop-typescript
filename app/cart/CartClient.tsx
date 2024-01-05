@@ -46,7 +46,10 @@ const CartClient: React.FC<CartClientProps> = ({ currentUser }) => {
       <div>
         {cartProducts &&
           cartProducts.map((item) => {
-            return <ItemContent key={item.id} item={item} />;
+            if (item && item.id) {
+              return <ItemContent key={item.id} item={item} />;
+            }
+            return null;
           })}
       </div>
       <div className="border-t-[1.5px] border-slate-200 py-4 flex justify-between gap-4">
