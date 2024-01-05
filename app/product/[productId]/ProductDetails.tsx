@@ -54,26 +54,23 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
     setIsProductInCart(false);
     if (cartProducts) {
       const existingIndex = cartProducts.findIndex(
-        (item) => item && item.id === product.id
+        (item) => item.id === product.id
       );
       if (existingIndex > -1) {
         setIsProductInCart(true);
       }
     }
-  }, [cartProducts]);
+  }, [cartProducts, product.id]);
 
   const productRating =
     product.reviews.reduce((acc: number, item: any) => item.rating + acc, 0) /
     product.reviews.length;
 
-  const handleColorSelect = useCallback(
-    (value: SelectedImgType) => {
-      setCartProduct((prev) => {
-        return { ...prev, selectedImg: value };
-      });
-    },
-    [cartProduct.selectedImg]
-  );
+  const handleColorSelect = useCallback((value: SelectedImgType) => {
+    setCartProduct((prev) => {
+      return { ...prev, selectedImg: value };
+    });
+  }, []);
 
   const handleQtyIncrease = useCallback(() => {
     if (cartProduct.quantity === 99) {
