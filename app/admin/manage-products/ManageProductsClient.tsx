@@ -167,7 +167,7 @@ const ManageProductsClient: React.FC<ManageProductsClientProps> = ({
         toast.dismiss(loadingToast);
         toast.error("Failed to delete product");
       });
-  }, []);
+  }, [router, storage]);
 
   return (
     <div className="max-w-[1150px] m-auto text-xl">
